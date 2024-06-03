@@ -31,10 +31,11 @@ The application is built using the following libraries:
 - Zustand: Provides state management for React applications using a simple and flexible API, suitable for smaller-scale applications and component-level state management.
 
 ## Image
-- ![image](https://github.com/herbayulet/Jendela-Assesment/assets/61405169/b57fb7e6-1a29-433e-9bbb-864b3d2dbd02)
-- ![image](https://github.com/herbayulet/Jendela-Assesment/assets/61405169/1fdf4ddf-142c-435e-bb4b-407230d1d045)
-- ![image](https://github.com/herbayulet/Jendela-Assesment/assets/61405169/bd9d1d16-8633-4da5-bf47-1b8a7c20df72)
-- ![image](https://github.com/herbayulet/Jendela-Assesment/assets/61405169/5b988f31-0339-4bd4-8b12-49a3f188513f)
-
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/herbayulet/Jendela-Assesment/assets/61405169/b57fb7e6-1a29-433e-9bbb-864b3d2dbd02" alt="image" style="width: 25%;">
+  <img src="https://github.com/herbayulet/Jendela-Assesment/assets/61405169/1fdf4ddf-142c-435e-bb4b-407230d1d045" alt="image" style="width: 25%;">
+  <img src="https://github.com/herbayulet/Jendela-Assesment/assets/61405169/bd9d1d16-8633-4da5-bf47-1b8a7c20df72" alt="image" style="width: 25%;">
+  <img src="https://github.com/herbayulet/Jendela-Assesment/assets/61405169/5b988f31-0339-4bd4-8b12-49a3f188513f" alt="image" style="width: 25%;">
+</div>
 
 
