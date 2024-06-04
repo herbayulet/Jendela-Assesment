@@ -6,10 +6,22 @@ interface CardPesananProps {
 }
 
 const CardPesanan: React.FC<CardPesananProps> = ({ orders }) => {
+  const groupedOrders = orders.reduce((acc, curr) => {
+    const existingOrder = acc.find((order) => order.sumber === curr.sumber);
+
+    if (existingOrder) {
+      existingOrder.jumlah += curr.jumlah;
+    } else {
+      acc.push(curr);
+    }
+
+    return acc;
+  }, [] as Order[]);
+
   return (
     <>
-      {orders.length > 0 ? (
-        orders.map((data) => (
+      {groupedOrders.length > 0 ? (
+        groupedOrders.map((data) => (
           <div>
             <Card key={data.nama}>
               <CardHeader>

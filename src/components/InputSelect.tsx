@@ -29,7 +29,10 @@ const InputSelect: React.FC<InputSelectProps> = ({
     <div className="mx-20 py-10">
       <div className="flex sm:flex-row sm:justify-between flex-col gap-3">
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <div className="flex h-full p-2.5 rounded-lg bg-gray-800">
+          <div
+            className="flex h-full p-2.5 rounded-lg bg-gray-800"
+            onClick={() => setIsDialogOpen(true)}
+          >
             <DialogTrigger asChild>
               <button
                 className="text-white text-sm"
