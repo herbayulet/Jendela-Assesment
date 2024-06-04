@@ -1,70 +1,3 @@
-// import { Order } from "@/interface/Oder";
-// import {
-//   Table,
-//   TableBody,
-//   TableCaption,
-//   TableCell,
-//   TableHead,
-//   TableHeader,
-//   TableRow,
-// } from "./ui/table";
-
-// interface TablePemesanProps {
-//   orders: Order[];
-// }
-
-// const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
-//   return (
-//     <Table className="w-full table-auto">
-//       {orders.length > 0 ? (
-//         <TableCaption>List Pemesan Roti</TableCaption>
-//       ) : (
-//         <TableCaption>Tidak ada pesanan</TableCaption>
-//       )}
-//       <TableHeader>
-//         <TableRow>
-//           <TableHead className="w-[100px] text-sm">Nama</TableHead>
-//           <TableHead className="text-sm">Sumber Pesanan</TableHead>
-//           <TableHead className="text-sm">Email</TableHead>
-//           <TableHead className="text-sm whitespace-nowrap">HP</TableHead>
-//           <TableHead className="text-sm whitespace-nowrap">
-//             Jumlah Roti
-//           </TableHead>
-//           <TableHead className="text-sm whitespace-nowrap">
-//             Keterangan
-//           </TableHead>
-//         </TableRow>
-//       </TableHeader>
-//       <TableBody>
-//         {orders.length > 0 ? (
-//           orders.map((data) => (
-//             <TableRow key={data.nama}>
-//               <TableCell className="font-medium text-sm">
-//                 {data?.nama}
-//               </TableCell>
-//               <TableCell className="text-sm">{data.sumber}</TableCell>
-//               <TableCell className="text-sm">{data?.email}</TableCell>
-//               <TableCell className="text-sm whitespace-nowrap">
-//                 {data?.hp}
-//               </TableCell>
-//               <TableCell className="text-sm whitespace-nowrap">
-//                 {data?.jumlah}
-//               </TableCell>
-//               <TableCell className="text-sm whitespace-nowrap">
-//                 {data?.keterangan}
-//               </TableCell>
-//             </TableRow>
-//           ))
-//         ) : (
-//           <></>
-//         )}
-//       </TableBody>
-//     </Table>
-//   );
-// };
-
-// export default TablePemesan;
-
 import { Order } from "@/interface/Oder";
 import { useMediaQuery } from "react-responsive";
 import {
@@ -76,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import React, { useEffect, useState } from "react";
 
 interface TablePemesanProps {
@@ -107,16 +40,13 @@ const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
     <>
       {isSmallScreen ? (
         <Card className="w-full">
-          <CardHeader className="flex items-center justify-center">
-            <CardTitle>List Pemesan Roti</CardTitle>
-          </CardHeader>
           <CardContent>
             {orders.length > 0 ? (
-              <TableCaption className="flex items-center justify-center">
+              <TableCaption className="flex items-center justify-center mb-2">
                 List Pemesan Roti
               </TableCaption>
             ) : (
-              <TableCaption className="flex items-center justify-center">
+              <TableCaption className="flex items-center justify-center mb-2">
                 Tidak ada pesanan
               </TableCaption>
             )}
