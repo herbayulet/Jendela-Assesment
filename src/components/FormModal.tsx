@@ -29,7 +29,7 @@ const FormModal: React.FC<FormModalProps> = ({ addOrder, onClose }) => {
   return (
     <div className="flex items-center justify-center">
       <div className="bg-slate-200 p-8 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl mb-4">Login Order Roti</h2>
+        <h2 className="text-2xl mb-4">Form Order Roti</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">

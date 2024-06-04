@@ -11,12 +11,23 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isVerySmall = useMediaQuery({ maxWidth: 320 });
   const router = useNavigate();
 
   return (
-    <div className="h-16 bg-gray-800 text-white flex flex-row justify-between items-center px-4">
-      <p className="text-xl font-bold">Company Name</p>
-      <div className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-600">
+    <div
+      className={`h-16 bg-gray-800 text-white flex flex-row justify-between items-center px-4 ${
+        isVerySmall ? "w-full" : ""
+      }`}
+    >
+      <p className={`text-xl font-bold ${isVerySmall ? "text-center" : ""}`}>
+        Company Name
+      </p>
+      <div
+        className={`w-10 h-10 flex items-center justify-center rounded-full bg-zinc-600 ${
+          isVerySmall ? "mx-auto" : ""
+        }`}
+      >
         {isMobile ? (
           <DropdownMenu>
             <DropdownMenuTrigger>B</DropdownMenuTrigger>

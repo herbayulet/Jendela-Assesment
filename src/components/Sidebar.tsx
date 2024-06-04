@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Sidebar = () => {
   const router = useNavigate();
   return (
-    <div className="w-60 bg-gray-100 hidden flex-col justify-between h-screen sm:flex">
+    <div className="w-60 bg-gray-100 hidden flex-col justify-between h-screen md:flex lg:flex">
       <div className="p-4">
         <a href="/home" className="block py-2 text-lg font-semibold">
           Home
