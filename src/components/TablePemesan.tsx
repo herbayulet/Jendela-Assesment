@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "./ui/table";
 import { Card, CardContent } from "./ui/card";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface TablePemesanProps {
   orders: Order[];
@@ -18,23 +18,6 @@ interface TablePemesanProps {
 
 const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
   const isSmallScreen = useMediaQuery({ maxWidth: 650 });
-
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  console.log(width, "ini lebar");
-  console.log(height, "ini tinggi");
 
   return (
     <>
