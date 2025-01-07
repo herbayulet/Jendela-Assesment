@@ -20,6 +20,11 @@ interface TablePemesanProps {
 const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
   const isSmallScreen = useMediaQuery({ maxWidth: 650 });
 
+  const hapusData = (name: string) => {
+    const updateOrder = orders.filter((order) => order.nama !== name)
+    localStorage.setItem('pesanan', JSON.stringify(updateOrder))
+  }
+
   return (
     <>
       {isSmallScreen ? (
@@ -86,11 +91,11 @@ const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
                     <TableCell className="text-sm whitespace-nowrap">
                       {data?.jumlah}
                     </TableCell>
-                    <TableCell className="text-sm whitespace-nowrap">
-                      {data?.keterangan}
+                    <TableCell className={`${data.keterangan === "" ? 'text-xl' : 'text-sm'} whitespace-nowrap`}>
+                      {data?.keterangan ? data.keterangan : '-'}
                     </TableCell>
                     <TableCell className="text-lg whitespace-nowrap cursor-pointer">
-                      <MdDelete className="text-rose-500"/>
+                      <MdDelete className="text-rose-500" onClick={() => hapusData(data?.nama)}/>
                     </TableCell>
                   </TableRow>
                 ))

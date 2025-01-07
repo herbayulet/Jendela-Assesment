@@ -5,7 +5,7 @@ import { OrderSchema, schemaOrder } from "@/schema/OrderSchema";
 
 interface FormModalProps {
   addOrder: (newOrder: OrderSchema) => void; //
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const FormModal: React.FC<FormModalProps> = ({ addOrder, onClose }) => {
@@ -21,6 +21,9 @@ const FormModal: React.FC<FormModalProps> = ({ addOrder, onClose }) => {
   const onSubmit = async (data: OrderSchema) => {
     try {
       await addOrder(data);
+      if (onClose) {
+        onClose()
+      }
     } catch (error) {
       setError("Gagal menambahkan data");
     }
@@ -135,7 +138,7 @@ const FormModal: React.FC<FormModalProps> = ({ addOrder, onClose }) => {
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-            onClick={() => onClose()}
+            // onClick={() => onClose()}
           >
             Tambah
           </button>
