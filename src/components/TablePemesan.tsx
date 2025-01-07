@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "./ui/table";
 import { Card, CardContent } from "./ui/card";
+import { MdDelete } from "react-icons/md";
 import React from "react";
 
 interface TablePemesanProps {
@@ -65,12 +66,15 @@ const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
                 <TableHead className="text-sm whitespace-nowrap">
                   Keterangan
                 </TableHead>
+                <TableHead className="text-sm whitespace-nowrap">
+                  Action
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {orders.length > 0 ? (
-                orders.map((data) => (
-                  <TableRow key={data.nama}>
+                orders.map((data, id) => (
+                  <TableRow key={id}>
                     <TableCell className="font-medium text-sm">
                       {data?.nama}
                     </TableCell>
@@ -84,6 +88,9 @@ const TablePemesan: React.FC<TablePemesanProps> = ({ orders }) => {
                     </TableCell>
                     <TableCell className="text-sm whitespace-nowrap">
                       {data?.keterangan}
+                    </TableCell>
+                    <TableCell className="text-lg whitespace-nowrap cursor-pointer">
+                      <MdDelete className="text-rose-500"/>
                     </TableCell>
                   </TableRow>
                 ))

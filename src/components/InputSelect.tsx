@@ -25,6 +25,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
   const handleDialogClose = () => {
     setIsDialogOpen(false);
   };
+
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="flex sm:flex-row sm:justify-between flex-col gap-3">
@@ -58,17 +59,6 @@ const InputSelect: React.FC<InputSelectProps> = ({
             className="text-white text-sm bg-transparent outline-none"
           />
         </div>
-
-        {/* <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Nama Pemesan" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">Joko</SelectItem>
-            <SelectItem value="dark">Andi</SelectItem>
-            <SelectItem value="system">Syahrul</SelectItem>
-          </SelectContent>
-        </Select> */}
       </div>
     </div>
   );
